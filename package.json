@@ -1,0 +1,29 @@
+{
+  "name": "gwt",
+  "version": "1.0.0",
+  "description": "GoldenWireToken",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yutadd/GoldWireToken.git"
+  },
+  "author": "yuta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yutadd/GoldWireToken/issues"
+  },
+  "homepage": "https://github.com/yutadd/GoldWireToken#readme",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.7.3",
+    "bn.js": "^5.2.1",
+    "chai": "^4.3.6",
+    "chai-bn": "^0.3.1",
+    "i": "^0.3.7",
+    "npm": "^8.18.0",
+    "truffle-assertions": "^0.9.2",
+    "web3": "^1.7.5"
+  }
+}
