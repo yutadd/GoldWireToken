@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+
+    <title>Page Title</title>
+</head>
+<body>
+    <script>
+        const address="0x5f4eFa75370760e50AB231cb7fe392FeeBcda128";
+        const abi="[\
+            {\
+                \"inputs\": [\
+                    {\
+                        \"internalType\": \"string\",\
+                        \"name\": \"newMessage\",\
+                        \"type\": \"string\"\
+                    }\
+                ],\
+                \"name\": \"setMessage\",\
+                \"outputs\": [],\
+                \"stateMutability\": \"nonpayable\",\
+                \"type\": \"function\"\
+            },\
+            {\
+                \"inputs\": [],\
+                \"name\": \"message\",\
+                \"outputs\": [\
+                    {\
+                        \"\internalType\": \"string\",\
+                        \"name\": \"\",\
+                        \"type\": \"string\"\
+                    }\
+                ],\
+                \"stateMutability\": \"view\",\
+                \"type\": \"function\"\
+            }\
+        ]";
+    let account;
+    let contract;
+    
+    let currentAccount = null;
+if (typeof window.ethereum !== 'undefined') {
+  // connects to MetaMask
+
+ethereum
+  .request({ method: 'eth_accounts' })
+  .then(handleAccountsChanged)
+  .catch((err) => {
+    // Some unexpected error.
+    // For backwards compatibility reasons, if no accounts are available,
+    // eth_accounts will return an empty array.
+    console.error(err);
+  });
+
+  
+} else {
+  // tell the user to install an `ethereum` provider extension
+}
+function handleAccountsChanged(accounts) {
+  if (accounts.length === 0) {
+    // MetaMask is locked or the user has not connected any accounts
+    console.log('Please connect to MetaMask.');
+  } else if (accounts[0] !== currentAccount) {
+    currentAccount = accounts[0];
+    alert(currentAccount);
+    // Do any other work!
+  }
+}
+        </script>
+</body>
+</html>
